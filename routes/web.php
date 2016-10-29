@@ -11,12 +11,17 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::post('/save', 'TestController@save');
+
+Route::get('/create', 'TestController@create');
 
 Route::get('/home', 'HomeController@index');
 
+Auth::routes();
 //Route::get('/home', 'UserController@show');

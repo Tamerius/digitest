@@ -1,13 +1,13 @@
-@extends('master')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
+                <div class="panel-heading">Create test</div>
                 <div class="panel-body">
-                    <a class="btn btn-primary right" href="/create">Create new test</a>
-					@include("tests_created");
+					@include("test_form");                    
                 </div>
             </div>
         </div>
