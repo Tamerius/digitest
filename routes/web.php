@@ -17,11 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/save', 'TestController@save');
-
 Route::get('/create', 'TestController@create');
+Route::post('/save', 'TestController@save');
+Route::get('/edit/{id}', 'TestController@edit');
 
 Route::get('/home', 'HomeController@index');
+
 
 Auth::routes();
 //Route::get('/home', 'UserController@show');

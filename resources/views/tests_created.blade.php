@@ -1,4 +1,6 @@
 <h2>My tests</h2>
-@foreach($tests as $test)
-	<p>{{ $test->title }}</p>
-@endforeach
+<ul>
+	@foreach($tests as $test)
+		<li><a href="/edit/{{ $test->id }}">{{ $test->title }}</a></li>
+	@endforeach
+</ul>
