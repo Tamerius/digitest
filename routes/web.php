@@ -23,6 +23,12 @@ Route::get('/edit/{id}', 'TestController@edit');
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/tests/{test_id}/invite/{user_id}/{invite}', 'TestController@invite');
+Route::get('/tests/answer/{id}', 'TestController@answer');
+Route::get('/tests/delete/{id}', 'TestController@delete');
+
+Route::get('/users/{name}', 'UserController@get_data');
+Route::get('/answers/{id}', 'TestController@save_answers');
 
 Auth::routes();
 //Route::get('/home', 'UserController@show');

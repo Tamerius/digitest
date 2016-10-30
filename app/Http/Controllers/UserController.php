@@ -24,4 +24,14 @@ class UserController extends Controller
 
     	return view('tests_created', $data);
     }
+
+    public function get_data($name) {
+        $user = User::where('name', 'LIKE', '%'.$name.'%')->first();
+        if ($user) {
+            $data = array(
+                'id' => $user->id,
+                'name' => $user->name );
+            return $data;
+        }
+    }
 }

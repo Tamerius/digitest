@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Test extends Model {
 	protected $table = 'tests';
-	protected $fillable = ['user_id', 'title', 'subject', 'participants'];
+	protected $fillable = ['user_id', 'title', 'subject', 'participant_id'];
 	public $timestamps = false;
 
 	public function user() {

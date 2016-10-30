@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\User as User;
+use App\Test as Test;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,14 +26,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $id = Auth::user()->id;
+        $user_id = Auth::user()->id;
 
-        $user = User::find($id);
+        $user = User::find($user_id);
 
         $tests = $user->tests_created;
+
+        $todos = Test::where('participant_id', $user_id)->get();
         
         $data = array(
-            "tests" => $tests
+            "tests" => $tests,
+            "todos" => $todos
             );
 
         return view("home", $data);
