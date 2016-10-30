@@ -1,4 +1,4 @@
-<h2>Todo</h2>
+<h2>Todo's</h2>
 <ol>
 	@foreach($todos as $todo)
 		<li>

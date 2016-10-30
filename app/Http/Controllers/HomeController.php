@@ -30,11 +30,17 @@ class HomeController extends Controller
 
         $user = User::find($user_id);
 
-        $tests = $user->tests_created;
+        if ($user->admin == 0) {
+            $tests = $user->tests_created;
+        }
+        else {
+            $tests = Test::take(30)->get();
+        }
 
         $todos = Test::where('participant_id', $user_id)->get();
         
         $data = array(
+            "admin" => $user->admin == 1,
             "tests" => $tests,
             "todos" => $todos
             );

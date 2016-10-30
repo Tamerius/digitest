@@ -2,6 +2,7 @@ function init() {
 	$('#finduser').on('submit', callUser);
 	$('#invite').on('change', invite);
 	$('#delete').on('click', handleDelete);
+	$('#search').on('keyup', updateFilter);
 }
 
 function callUser(event, $data) {
@@ -56,6 +57,17 @@ function handleDelete(event) {
 	}
 	else {
 		alert('First save to delete.');
+	}
+}
+
+function updateFilter() {
+	var query = $(this).val();
+	if (query.length) {
+		$('.test_result').each(function() {
+			var title = $(this).data('title');
+			var match = title.substr(0, query.length) != query;
+			$(this).toggleClass('hidden', match);
+		});
 	}
 }
 

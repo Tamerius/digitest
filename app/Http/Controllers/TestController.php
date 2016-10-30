@@ -92,7 +92,7 @@ class TestController extends Controller
 
     public function edit($id) {
 		$test = Test::find($id);
-    	if (Auth::user() && $test->user_id == Auth::user()->id) {
+    	if (Auth::user() && (Auth::user()->admin == 1 || $test->user_id == Auth::user()->id)) {
     		$questions = $test->questions;
     		$question1_id = $questions->where('sub_id', 1)->first()->id;
 			$question1 = Question::find($question1_id);
