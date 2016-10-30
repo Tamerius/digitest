@@ -111,6 +111,9 @@ class TestController extends Controller
     			'answer_3' => $question3->answers
     			));
     	}
+    	else {
+    		return 'Access denied';
+    	}
     }
 
     public function answer($id) {

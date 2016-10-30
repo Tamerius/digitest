@@ -25,8 +25,7 @@ function handleUserData(data) {
 	$result.text(data.name);
 	$result.data('user_id', data.id);
 	$userContainer.removeClass('hidden');
-
-	console.log(userId, data.id);
+	
 	$toggle.prop('checked', userId == data.id);
 	$('#invited').text(userId == data.id ? 'Invited.' : 'Not invited.');
 }
