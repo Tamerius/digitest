@@ -61,13 +61,15 @@ function handleDelete(event) {
 
 function updateFilter() {
 	var query = $(this).val();
-	if (query.length) {
-		$('.test_result').each(function() {
-			var title = $(this).data('title');
-			var match = title.substr(0, query.length) != query;
-			$(this).toggleClass('hidden', match);
-		});
-	}
+	$('.test_result').each(function() {
+		if (!query.length) {
+			$(this).removeClass('hidden');
+			return;
+		}
+		var title = $(this).data('title');
+		var match = title.substr(0, query.length) != query;
+		$(this).toggleClass('hidden', match);
+	});
 }
 
 $(window).on('load', init);
