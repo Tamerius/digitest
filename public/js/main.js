@@ -47,8 +47,15 @@ function handlerInviteCallback(data) {
 
 function handleDelete(event) {
 	event.preventDefault();
-	if (confirm('Please confirm to delete.')) {
-		window.location.href = '/tests/delete/' + $('#test_id').val();
+	var testId = $('#test_id').val();
+
+	if (testId.length > 0) {
+		if (confirm('Please confirm to delete.')) {
+			window.location.href = '/tests/delete/' + testId;
+		}
+	}
+	else {
+		alert('First save to delete.');
 	}
 }
 

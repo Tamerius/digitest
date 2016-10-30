@@ -26,7 +26,7 @@
 					<p>{{ $answer_3->text }}</p>
 				</li>
 			</ol>
-			<a class="btn btn-primary" href="/home">
+			<a class="btn btn-link" href="/home">
                 Back to dashboard
             </a>
 		</div>

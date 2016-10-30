@@ -2,7 +2,7 @@
 <ol>
 	@foreach($todos as $todo)
 		<li>
-			<a href="tests/answer/{{ $todo->id }}">{{ $todo->title }}</a>
+			<a href="tests/answer/{{ $todo->id }}">{{ $todo->title }}</a> ({{ $todo->subject }})
 		</li>
 	@endforeach
 </ol>

@@ -39,7 +39,7 @@
 						</label>
 					</li>
 				</ol>
-				<a class="btn btn-primary" href="/home">
+				<a class="btn btn-link" href="/home">
                     Back to dashboard
                 </a>
 				<input type="submit" value="Save" />
